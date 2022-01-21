@@ -90,6 +90,7 @@
         {#each $drive.files || [] as file}
           <Files
             name={file.name}
+            type={file.type}
             blob={window.URL.createObjectURL(file.blob)}
           />
         {/each}

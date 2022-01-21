@@ -1,15 +1,20 @@
 <script>
   export let name;
   export let blob;
+  export let type;
 </script>
 
 <div class="files-container">
   <div class="content">
-    <img
-      src={blob}
-      style="width:100%; height: 100%; object-fit: cover"
-      alt={name}
-    />
+    {#if type.includes("image")}
+      <img
+        src={blob}
+        style="width:100%; height: 100%; object-fit: cover"
+        alt={name}
+      />
+    {:else}
+      <div class="width: 100%; height: 100%; background-color: gray" />
+    {/if}
   </div>
   <div class="title">
     <div>
